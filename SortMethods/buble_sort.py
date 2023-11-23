@@ -2,8 +2,8 @@ from typing import Any
 
 
 class BubleSort:
-    """This class is the implementation of the BubleSort method in lists
-    """
+    """This class is the implementation of the BubleSort method in lists"""
+
     def __init__(self) -> None:
         pass
 

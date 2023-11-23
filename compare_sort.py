@@ -23,13 +23,13 @@ def compare_time() -> None:
     # get execution time in ms
     for i in tqdm(range(10, 9990 + 1, 20), total=len(range(10, 9990 + 1, 20))):
         shuffled_list = get_random_list(i)
-    
+
         _, quick_time = time_function(f=quick_sort, input_list=shuffled_list.copy())
         _, buble_time = time_function(f=buble_sort, input_list=shuffled_list.copy())
 
         buble_sort_time.append(buble_time)
         quick_sort_time.append(quick_time)
-    
+
     print(f"plotting graphs:")
     # Plotting buble_sort graph
     plt.plot(range(10, 9990 + 1, 20), buble_sort_time, c="b")
@@ -38,7 +38,7 @@ def compare_time() -> None:
     plt.title("BubleSort execution time (s) per list_size.")
     plt.savefig(os.path.join(save_path, "buble_sort_time.jpeg"))
     plt.clf()
-    
+
     # Plotting quick_sort graph
     plt.plot(range(10, 9990 + 1, 20), quick_sort_time, c="r")
     plt.xlabel("List_size")
@@ -46,8 +46,8 @@ def compare_time() -> None:
     plt.title("QuickSort execution time (s) per list_size.")
     plt.savefig(os.path.join(save_path, "quick_sort_time.jpeg"))
     plt.clf()
-    
-    #plot quick_sortx buble_sort graph
+
+    # plot quick_sortx buble_sort graph
     plt.plot(range(10, 9990 + 1, 20), buble_sort_time, c="b", label="Buble_sort")
     plt.plot(range(10, 9990 + 1, 20), quick_sort_time, c="r", label="Quick_sort")
     plt.xlabel("List_size")
@@ -58,7 +58,7 @@ def compare_time() -> None:
     plt.clf()
 
     print(f"Graphs saved in {save_path} folder")
-    
-    
+
+
 if __name__ == "__main__":
     compare_time()

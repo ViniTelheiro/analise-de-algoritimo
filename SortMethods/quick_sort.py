@@ -1,6 +1,6 @@
 class QuickSort:
-    """This class implementates the QuickSort method in a list.
-    """
+    """This class implementates the QuickSort method in a list."""
+
     def __init__(self) -> None:
         pass
 
