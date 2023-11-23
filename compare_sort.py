@@ -29,17 +29,36 @@ def compare_time() -> None:
 
         buble_sort_time.append(buble_time)
         quick_sort_time.append(quick_time)
-
-    # Plotting the graph
+    
+    print(f"plotting graphs:")
+    # Plotting buble_sort graph
+    plt.plot(range(10, 9990 + 1, 20), buble_sort_time, c="b")
+    plt.xlabel("List_size")
+    plt.ylabel("execution_time(s)")
+    plt.title("BubleSort execution time (s) per list_size.")
+    plt.savefig(os.path.join(save_path, "buble_sort_time.jpeg"))
+    plt.clf()
+    
+    # Plotting quick_sort graph
+    plt.plot(range(10, 9990 + 1, 20), quick_sort_time, c="r")
+    plt.xlabel("List_size")
+    plt.ylabel("execution_time(s)")
+    plt.title("QuickSort execution time (s) per list_size.")
+    plt.savefig(os.path.join(save_path, "quick_sort_time.jpeg"))
+    plt.clf()
+    
+    #plot quick_sortx buble_sort graph
     plt.plot(range(10, 9990 + 1, 20), buble_sort_time, c="b", label="Buble_sort")
     plt.plot(range(10, 9990 + 1, 20), quick_sort_time, c="r", label="Quick_sort")
     plt.xlabel("List_size")
     plt.ylabel("execution_time(s)")
     plt.title("BubleSort X QuickSort execution time (s) per list_size.")
     plt.legend()
-    plt.savefig(os.path.join(save_path, "time_graph.jpeg"))
+    plt.savefig(os.path.join(save_path, "comparation_time_graph.jpeg"))
     plt.clf()
 
-
+    print(f"Graphs saved in {save_path} folder")
+    
+    
 if __name__ == "__main__":
     compare_time()
